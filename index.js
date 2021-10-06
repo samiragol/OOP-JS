@@ -1,3 +1,5 @@
+//youtube: https://www.youtube.com/watch?v=PFmuCDHHpwk
+
 //two patterns for creating object in javascript:
 //1- Factory function
 //2- Constructor Function
