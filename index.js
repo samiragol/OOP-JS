@@ -96,3 +96,38 @@ if("redius" in cirtcle1) {
     //console.log("circle has redius!")
 }
 
+//-----------------------------------------------------------------------
+
+//youtube: https://www.youtube.com/watch?v=tiRhFGnCltw
+//closure
+let name = "Samira";
+
+greetMeWithDelay();
+
+name = "Ehsan";
+
+function greetMeWithDelay() {
+    console.log("name", name) //Samira
+    setTimeout(function() {
+        console.log("name", name) // Ehsan
+    }, 0);
+}
+
+//the output here is "Ehsan", becasue clousers in javascript closed over the 
+//variavle names, the memorise the variavle names not the variable value.
+//so the value is only look up when the function ctually runs. 
+
+
+//----------------------------------------------------------------------------
+//proptotype: prototypes are fallback objects in javascript, to look up missing functionalities.
+const person = {kind: "human"} //has default prototype as every object has
+
+const user = Object.create(person); //creating object called `user` and add person as its prototype.
+
+Object.setPrototypeOf(user, {kind : "mammal", angry: "reason"}) //change/modify user prototype
+
+//if we define an array, each array has some properties such as push, filter, etc.
+//prototype concept helps to not have all these functions/properties created for each array that 
+//has been declared. instead its is linked to root/parent prototype in higher level in chain that keeps
+//all those functions.
+
