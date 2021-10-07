@@ -10,7 +10,7 @@ function createCircle(radius) {
     return {
         radius, 
         draw: function() {
-            console.log("draw!!!")
+            //console.log("draw!!!")
         }
     } 
 }
@@ -20,14 +20,32 @@ cisrcle.draw();
 
 //Constructor Function
 function Circle(redius) {
-    console.log("this", this)
     this.redius = redius;
+    let defaultLocation = {x:0, y:0};
+    let defaultRedius = 4;
+
+    // this.getDefaultLocation = function() {
+    //     return defaultLocation;
+    // }
+
+    Object.defineProperty(this, "defaultRedius", {
+        get: function() {
+            return defaultRedius;
+        }
+        // set: function(value) {
+        //     if(typeof value !== "number") 
+        //         throw new Error("invalid radius")
+        //     defaultRedius= value;
+        // }
+        //without setter the "defaultRadius" property is read only.
+    })
     this.draw = function() {
         console.log("draw :)")
     }
 }
 
-const another = new Circle(3);
+const anotherCircle = new Circle(3);
+anotherCircle.draw();
 
 
 //P.S. `new` keyword create a new empty object that `this` 
@@ -65,5 +83,16 @@ z = {value: 30}; // w is {value: 30}
 //Value Types: Number, String, Boolean, Symbol, undefined, null
 //Reference Types: Object, Function, Array
 
+//------------------------------------------------------------------------
 
+//iterating over object:
+const cirtcle1 = new Circle(1);
+
+for(let key in cirtcle1) {
+    //console.log(key, cirtcle1[key], ">>>");
+}
+
+if("redius" in cirtcle1) {
+    //console.log("circle has redius!")
+}
 
