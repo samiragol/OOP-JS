@@ -48,8 +48,10 @@ const anotherCircle = new Circle(3);
 anotherCircle.draw();
 
 
-//P.S. `new` keyword create a new empty object that `this` 
-//will point to that empty object.
+//P.S. `new` keyword: 
+//1-create a new empty object.
+//2- `this` inside constructor function will point to that empty object.
+//3- the constructor function automatically return `this`. 
 
 //Note: when we create object, javascript engine will traslate that to:
  
